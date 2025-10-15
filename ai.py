@@ -103,15 +103,15 @@ class TicTacToeAI:
         
         # Terminal state: AI won
         if game_winner == self.ai_symbol:
-            return 10 - current_depth  # Prefer winning quickly (fewer moves)
+            return 1  # AI wins: +1
         
         # Terminal state: Opponent won
         elif game_winner == self.opponent_symbol:
-            return current_depth - 10  # Prefer losing slowly (more moves)
+            return -1  # AI loses: -1
         
         # Terminal state: Draw (board full, no winner)
         elif board.is_full():
-            return 0  # Neutral score for draw
+            return 0  # Draw: 0 (neutral score)
         
         # Get all empty cells where a move can be made
         available_cell_positions = board.get_available_moves()
