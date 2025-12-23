@@ -10,7 +10,7 @@ class TicTacToeAI:
         self.ai_symbol: str = ai_symbol
         self.opponent_symbol: str = opponent_symbol
     
-    def get_best_move(self, board: Board):
+    def get_best_move(self, board: Board) -> Optional[Tuple[int, int]]:
         
         available_cell_positions = board.get_available_moves()
         
@@ -37,7 +37,9 @@ class TicTacToeAI:
                 best_minimize_score=math.inf
             )
             
- 
+            if move_score > highest_score:
+                highest_score = move_score
+                optimal_move_position = (row_index, column_index)
         
         return optimal_move_position
     
