@@ -10,7 +10,7 @@ class TicTacToeAI:
         self.ai_symbol: str = ai_symbol
         self.opponent_symbol: str = opponent_symbol
     
-    def get_best_move(self, board: Board) -> Optional[Tuple[int, int]]:
+    def get_best_move(self, board: Board):
         
         available_cell_positions = board.get_available_moves()
         
