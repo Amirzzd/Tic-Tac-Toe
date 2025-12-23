@@ -72,7 +72,7 @@ The AI uses the **Minimax algorithm** with **alpha-beta pruning**:
 
 - **Minimax**: Recursively evaluates all possible game states to find the optimal move
 - **Alpha-Beta Pruning**: Optimization that eliminates branches that won't affect the final decision
-- **Evaluation**: Scores positions based on wins (+10), losses (-10), and draws (0)
+- **Evaluation**: Scores positions based on wins (+1), losses (-1), and draws (0)
 - **Depth Penalty**: Prefers faster wins and slower losses
 
 The AI is **unbeatable** - the best you can do is draw!
