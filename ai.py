@@ -14,11 +14,9 @@ class TicTacToeAI:
         
         available_cell_positions = board.get_available_moves()
         
-        # board is full
         if not available_cell_positions:
             return None
         
-        # First move play center for best position
         if len(available_cell_positions) == 9:
             return (1, 1)
         
@@ -39,9 +37,7 @@ class TicTacToeAI:
                 best_minimize_score=math.inf
             )
             
-            if move_score > highest_score:
-                highest_score = move_score
-                optimal_move_position = (row_index, column_index)
+ 
         
         return optimal_move_position
     
@@ -104,3 +100,4 @@ class TicTacToeAI:
                     break 
             
             return minimum_evaluation
+        

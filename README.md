@@ -109,10 +109,6 @@ Future improvements could include:
 - Network multiplayer
 - Save/load game state
 
-## Author
-
-Created as a demonstration of clean code practices, object-oriented design, and game AI implementation.
-
 ## License
 
 Free to use for educational purposes.
