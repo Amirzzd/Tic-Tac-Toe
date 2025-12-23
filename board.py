@@ -1,29 +1,11 @@
-"""
-Board module for Tic-Tac-Toe game.
-Manages the 3x3 grid, move validation, and win/draw detection.
-"""
 
 from typing import Optional, List, Tuple
 
 
 class Board:
-    """
-    Represents the Tic-Tac-Toe game board.
-    
-    Responsibilities:
-    - Maintain the 3x3 grid state
-    - Validate moves
-    - Check for winners and draws
-    - Provide available moves
-    """
+
     
     def __init__(self):
-        """
-        Initialize an empty 3x3 Tic-Tac-Toe board.
-        
-        Creates a 3x3 grid where each cell starts as None (empty).
-        """
-        # 3x3 grid: None = empty, 'X' or 'O' = player symbol
         self.grid: List[List[Optional[str]]] = [[None for _ in range(3)] for _ in range(3)]
         self.board_size: int = 3  # Standard Tic-Tac-Toe is 3x3
     

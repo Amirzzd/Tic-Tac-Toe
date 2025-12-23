@@ -1,7 +1,4 @@
-"""
-Game Controller module for Tic-Tac-Toe.
-Coordinates gameplay, manages turns, and handles game state transitions.
-"""
+
 
 from typing import Optional, Callable
 from board import Board
@@ -10,24 +7,9 @@ from ai import TicTacToeAI
 
 
 class GameController:
-    """
-    Controls the game flow and coordinates between components.
-    
-    Responsibilities:
-    - Manage game state and turns
-    - Coordinate between board, players, and AI
-    - Handle move validation and execution
-    - Detect game-over conditions
-    - Notify UI of game events
-    """
+
     
     def __init__(self):
-        """
-        Initialize the game controller with empty game state.
-        
-        Sets up the board and prepares for a new game.
-        Players and AI are created when a game starts.
-        """
         self.game_board: Board = Board()
         self.human_player: Optional[Player] = None
         self.computer_player: Optional[Player] = None
@@ -40,26 +22,16 @@ class GameController:
         self.game_ended_callback: Optional[Callable] = None
     
     def start_new_game(self, chosen_symbol_for_human: str) -> None:
-        """
-        Start a new game with the human player using the chosen symbol.
-        
-        Args:
-            chosen_symbol_for_human: The symbol chosen by the human player ('X' or 'O')
-        """
-        # Clear the board for a fresh game
+
         self.game_board.reset()
         
-        # Determine AI symbol (opposite of human's choice)
         computer_symbol = 'O' if chosen_symbol_for_human == 'X' else 'X'
         
-        # Create player objects
         self.human_player = Player(chosen_symbol_for_human, PlayerType.HUMAN)
         self.computer_player = Player(computer_symbol, PlayerType.AI)
         
-        # Initialize the AI opponent
         self.ai_opponent = TicTacToeAI(computer_symbol, chosen_symbol_for_human)
         
-        # X always goes first in Tic-Tac-Toe
         if chosen_symbol_for_human == 'X':
             self.current_turn_player = self.human_player
         else:
@@ -67,21 +39,11 @@ class GameController:
         
         self.is_game_active = True
         
-        # If AI goes first, trigger its move
         if self.current_turn_player.is_ai():
             self._make_ai_move()
     
     def make_human_move(self, row: int, col: int) -> bool:
-        """
-        Process a move from the human player at the specified board position.
-        
-        Args:
-            row: Row index (0 = top, 1 = middle, 2 = bottom)
-            col: Column index (0 = left, 1 = middle, 2 = right)
-            
-        Returns:
-            True if move was valid and successfully executed, False if invalid
-        """
+
         # Don't allow moves if game has ended
         if not self.is_game_active:
             return False

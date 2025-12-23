@@ -11,24 +11,14 @@ from player import Player
 
 
 class GameUI:
-    """
-    Manages the Tkinter GUI for the Tic-Tac-Toe game.
-    
-    Responsibilities:
-    - Create and manage the game window
-    - Display the 3x3 button grid
-    - Handle user interactions
-    - Update visual state based on game events
-    - Show game-over dialogs
-    """
-    
+
     # Color scheme
-    COLOR_X = "#00BFFF"  # Blue for X
-    COLOR_O = "#FF4444"  # Red for O
-    COLOR_BG = "#000000"  # Black background
-    COLOR_BUTTON = "#333333"  # Dark gray button background
-    COLOR_BUTTON_HOVER = "#555555"  # Lighter gray on hover
-    COLOR_TEXT = "#FFFFFF"  # White text
+    COLOR_X = "#00BFFF" 
+    COLOR_O = "#FF4444"  
+    COLOR_BG = "#000000"  
+    COLOR_BUTTON = "#333333" 
+    COLOR_BUTTON_HOVER = "#555555" 
+    COLOR_TEXT = "#FFFFFF"
     
     def __init__(self, controller: GameController):
         """
